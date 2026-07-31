@@ -1,0 +1,40 @@
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@companycloud.com",
+  "password": "SecurePass123"
+}
+
+### Get companies
+GET http://localhost:5000/api/companies
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Create company
+POST http://localhost:5000/api/companies
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "companyName": "Sample Cloud Labs",
+  "location": "Pune",
+  "industry": "Cloud Services",
+  "employeeCount": 75,
+  "email": "hello@samplecloud.com",
+  "website": "https://samplecloud.com",
+  "contactNumber": "9090909090"
+}
+
+### Update company
+PUT http://localhost:5000/api/companies/COMPANY_ID_HERE
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "companyName": "Updated Cloud Labs"
+}
+
+### Delete company
+DELETE http://localhost:5000/api/companies/COMPANY_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE

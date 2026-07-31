@@ -1,0 +1,9 @@
+# Dependency directories
+backend/node_modules
+
+# Environment files
+backend/.env
+
+# Logs
+*.log
+npm-debug.log*

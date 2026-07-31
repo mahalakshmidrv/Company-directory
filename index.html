@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Directory Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <div>
+          <h1>Company Directory Management System</h1>
+          <p>Admin portal for managing company records, industry analytics, and employee statistics.</p>
+        </div>
+      </header>
+
+      <main>
+        <section id="login-section" class="panel active-panel">
+          <div class="panel-card">
+            <h2>Admin Login</h2>
+            <form id="login-form" class="form-grid">
+              <label>
+                Email
+                <input type="email" id="adminEmail" placeholder="admin@companycloud.com" required />
+              </label>
+              <label>
+                Password
+                <input type="password" id="adminPassword" placeholder="Enter password" required />
+              </label>
+              <button type="submit" class="button primary-button">Sign In</button>
+            </form>
+            <p class="info-text">Use the credentials from <code>backend/.env</code> to sign in.</p>
+            <p class="info-text">Tip: The default admin credentials are admin@companycloud.com / SecurePass123.</p>
+          </div>
+        </section>
+
+        <section id="dashboard-section" class="panel">
+          <div class="dashboard-top">
+            <div>
+              <h2>Admin Dashboard</h2>
+              <p>Manage company records and monitor key cloud directory metrics.</p>
+            </div>
+            <button id="logoutBtn" class="button secondary-button">Logout</button>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>Total Companies</h3>
+              <span id="totalCompanies">0</span>
+            </div>
+            <div class="stat-card">
+              <h3>Total Employees</h3>
+              <span id="totalEmployees">0</span>
+            </div>
+            <div class="stat-card">
+              <h3>Average Employees</h3>
+              <span id="averageEmployees">0</span>
+            </div>
+            <div class="stat-card">
+              <h3>Industry Types</h3>
+              <span id="industryTypes">0</span>
+            </div>
+          </div>
+
+          <div class="panel-grid">
+            <div class="panel-card form-card">
+              <div class="panel-card-header">
+                <h3 id="formTitle">Add Company</h3>
+                <span class="hint">Fill the form and submit to save details.</span>
+              </div>
+
+              <form id="companyForm" class="form-grid">
+                <input type="hidden" id="companyId" />
+                <label>
+                  Company Name
+                  <input type="text" id="companyName" placeholder="Enter company name" required />
+                </label>
+                <label>
+                  Location
+                  <input type="text" id="location" placeholder="City or region" required />
+                </label>
+                <label>
+                  Industry
+                  <input type="text" id="industry" placeholder="Example: Software" required />
+                </label>
+                <label>
+                  Employee Count
+                  <input type="number" id="employeeCount" min="0" placeholder="0" required />
+                </label>
+                <label>
+                  Email
+                  <input type="email" id="email" placeholder="contact@company.com" required />
+                </label>
+                <label>
+                  Website
+                  <input type="url" id="website" placeholder="https://example.com" required />
+                </label>
+                <label>
+                  Contact Number
+                  <input type="tel" id="contactNumber" placeholder="1234567890" required />
+                </label>
+                <div class="button-row">
+                  <button type="submit" class="button primary-button" id="submitBtn">Save Company</button>
+                  <button type="button" class="button secondary-button hidden" id="cancelEditBtn">Cancel Edit</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="panel-card search-card">
+              <div class="panel-card-header">
+                <h3>Search and Filter</h3>
+                <span class="hint">Filter company list before editing or deleting.</span>
+              </div>
+              <div class="filter-group">
+                <input type="search" id="searchInput" placeholder="Search by company name" />
+                <select id="industryFilter">
+                  <option value="">All Industries</option>
+                </select>
+                <button id="refreshBtn" class="button primary-button">Refresh List</button>
+              </div>
+              <div id="loadingIndicator" class="loading-indicator">Loading companies...</div>
+              <div class="message-box" id="messageBox"></div>
+            </div>
+          </div>
+
+          <section class="company-list-section">
+            <h3>Company Directory</h3>
+            <div id="companyList" class="company-list"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
