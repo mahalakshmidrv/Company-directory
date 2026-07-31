@@ -165,18 +165,25 @@ git push -u origin main
 4. Set the Authorization header to Bearer <token> for company requests.
 5. Test GET, POST, PUT, DELETE requests for /api/companies.
 
-## Viva Questions and Answers
-### Q1. What is this project about?
-A. It is a cloud-based company directory system used to manage company records securely.
+## Future Enhancements
 
-### Q2. Which technologies are used?
-A. Node.js, Express.js, MongoDB Atlas, HTML, CSS, and JavaScript.
+- Role-Based Access Control
+- Advanced Search Filters
+- Analytics Dashboard
+- Email Notifications
+- Cloud Deployment on AWS/Azure
+- Mobile Application Integration
 
-### Q3. What is JWT?
-A. JWT is a token-based authentication method used to secure API access.
+## Project Outcome
 
-### Q4. Why use MongoDB Atlas?
-A. It provides a cloud-hosted database solution that is scalable and easy to manage.
+This project demonstrates the implementation of Cloud Computing concepts using MongoDB Atlas and modern web technologies. It provides a scalable and secure platform for managing company information efficiently.
 
-### Q5. What are the main modules?
-A. Authentication, company management, search/filter, and analytics.
+## Author
+
+Mahalakshmi D
+
+Artificial Intelligence and Data Science
+
+Prathyusha Engineering College
+
+Tamil Nadu, India
